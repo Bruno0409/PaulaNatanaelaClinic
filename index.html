@@ -737,7 +737,7 @@
 
 
 <!-- Me Acompanhe no Instagram Start -->
-<section id="instagram" class="pt-3 pb-6 fundobg2">
+<section id="instagram" class="pt-3 pb-6 fundobg">
   <div class="container-fluid">
     <div class="container">
       <!-- Título da Seção -->
@@ -751,11 +751,11 @@
         <!-- Coluna esquerda: Diferenciais 1 e 2 -->
         <div class="col-12 col-md-3 d-flex flex-column gap-3">
           <div class="insta-card">
-            <h5>Atendimento Personalizado e Humanizado</h5>
+            <h5>Atendimento Personalizado</h5>
             <p>Tratamento exclusivo, com foco nas suas necessidades e expectativas, oferecendo cuidado e atenção em cada etapa do processo.</p>
           </div>
           <div class="insta-card">
-            <h5>Profissionalismo e Expertise Biomédica</h5>
+            <h5>Profissionalismo</h5>
             <p>Com formação em Biomedicina, garanto tratamentos estéticos eficazes, seguros e baseados em conhecimentos científicos.</p>
           </div>
         </div>
@@ -763,9 +763,12 @@
         <!-- Coluna central: Vídeo vertical -->
         <div class="col-12 col-md-3 d-flex justify-content-center">
           <div class="insta-video">
-            <video class="centralizado-video" width="100%" controls>
+            <video class="centralizado-video"
+                   width="100%"
+                   controls
+                   preload="metadata"
+                   poster="assets/videos/videoAtendimentoPoster.jpg">
               <source src="assets/videos/videoAtendimento.mp4" type="video/mp4">
-              <source src="assets/videos/videoAtendimento.mp4" type="video/webm">
               Seu navegador não suporta o formato de vídeo.
             </video>
           </div>
@@ -778,7 +781,7 @@
             <p>Espaço pensado para seu conforto, proporcionando uma experiência relaxante e sem pressa, onde você se sente em casa.</p>
           </div>
           <div class="insta-card">
-            <h5>Acompanhamento Pós-Tratamento Individualizado</h5>
+            <h5>Acompanhamento Pós-Tratamento</h5>
             <p>Orientações personalizadas para garantir os melhores resultados a longo prazo e seu bem-estar contínuo.</p>
           </div>
         </div>
@@ -805,10 +808,6 @@
           <h2 class="display-6">
             Dúvidas Frequentes <span class="text-highlight">&</span> Localização
           </h2>
-          <p>
-            Encontre respostas rápidas para suas perguntas e veja onde nos
-            encontrar.
-          </p>
         </div>
 
         <div class="row g-4">
@@ -868,11 +867,18 @@ E vale lembrar: cada organismo responde em um tempo, mas essa é a média mais c
           </div>
 
           <!-- Mapa -->
-          <div class="col-lg-6">
-            <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.182770755088!2d-37.0648466!3d-10.9495624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab30be28f762d%3A0xbde0d9857c37a4ca!2sJardins!5e0!3m2!1spt-BR!2sbr!4v1763827662835!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- Mapa -->
+            <div class="col-lg-6">
+              <div class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.182770755088!2d-37.0648466!3d-10.9495624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab30be28f762d%3A0xbde0d9857c37a4ca!2sJardins!5e0!3m2!1spt-BR!2sbr!4v1763827662835!5m2!1spt-BR!2sbr"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -900,7 +906,7 @@ E vale lembrar: cada organismo responde em um tempo, mas essa é a média mais c
               <div class="footer-col">
                 <h5 class="footer-title text-white">Nosso Endereço</h5>
                 <p>
-                  <i class="fa fa-map-marker-alt me-3"></i>Av. Ministro Geraldo Barreto Sobral, Centro Médico Jardins, Jardins- Aracaju-SE. 10º Andar, sala 1011.
+                  <i class="fa fa-map-marker-alt me-3"></i>Av. Ministro Geraldo Barreto Sobral. <br> Centro Médico Jardins <br> Jardins - Aracaju-SE. <br> 10º Andar, sala 1011.
                 </p>
                 <p>
                   <i class="fa fa-envelope me-3"></i>paulanatanaelahomeoffice@gmail.com
@@ -918,7 +924,7 @@ E vale lembrar: cada organismo responde em um tempo, mas essa é a média mais c
                 <h5 class="footer-title text-white">
                   Horário de Funcionamento
                 </h5>
-                <p>Somente com Agendamento</p>
+                <p>Somente com hora marcada.</p>
                 <!-- <p>08:30 - 19:00</p>
                 <br />
                 <p>Domingo</p>

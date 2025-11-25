@@ -1111,7 +1111,7 @@ p {
 
 .footer {
     background-color: var(--color-primary);
-    color: var(--color-secondary);
+    color: var(--color-white);
     padding: 40px 0;
 }
 
@@ -1128,7 +1128,7 @@ p {
 /* Links */
 .footer .footer-link {
     display: block;
-    color: var(--color-secondary);
+    color: var(--color-white);
     text-decoration: none;
     margin-bottom: 10px;
 }
