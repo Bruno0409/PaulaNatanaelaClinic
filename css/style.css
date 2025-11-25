@@ -50,14 +50,14 @@ section {
 }
 
 .fundobg1 {
-  background-image: url('/img/fundobg1.png');
+  background-image: url('/img/fundobg1.webp');
   background-repeat: no-repeat;         /* Impede que a imagem se repita */
   background-size: cover;               /* Faz a imagem cobrir todo o contêiner */
   background-position: left;
 }
 
 .fundobg2 {
-  background-image: url('/img/fundobg2.png');
+  background-image: url('/img/fundobg2.webp');
   background-repeat: no-repeat;         /* Impede que a imagem se repita */
   background-size: cover;               /* Faz a imagem cobrir todo o contêiner */
   background-position: left;  /* Centraliza a imagem no contêiner */
