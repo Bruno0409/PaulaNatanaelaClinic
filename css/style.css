@@ -68,19 +68,6 @@ section {
     background-color: var(--color-primary);
 }
 
-.social-btn {
-    background-color:  var(--color-secondary);
-    border-radius: 8px;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    transition: all 0.3s;
-}
-
-.social-btn:hover {
-    background-color: var(--color-primary); /* fundo verde no hover */
-    color: var(--color-secondary); /* ícone branco no hover */
-}
-
 .btn-voltar {
     background-color: var(--color-white);  /* Fundo branco */
     border-radius: 8px;  /* Borda arredondada */
@@ -116,20 +103,6 @@ section {
 }
 
 
-.btn-agendar-escuro {
-    background-color:  var(--color-primary);
-    border-radius: 8px;
-    color:  var(--color-secondary);/* texto branco */
-    border: none; /* opcional, remove a borda padrão do Bootstrap */
-    transition: all 0.3s;
-    font-size: 18px;
-}
-
-.btn-agendar:hover {
-    background-color: var(--color-secondary); /* tom mais escuro para hover */
-    color:  var(--color-primary);
-}
-
 /* Faz o carrossel ocupar toda a altura da tela */
 #header-carousel,
 #header-carousel .carousel-inner,
@@ -140,6 +113,7 @@ section {
 #header-carousel .carousel-item img {
     height: 95vh;         /* Faz a imagem ocupar todo o item */
     object-fit: cover;     /* Preenche sem distorcer */
+    object-position: 55% center;
 }
 
 /* Fonte principal apenas para o título */
@@ -165,21 +139,6 @@ section {
     font-weight: bold; /* Deixe o texto mais destacado, se desejar */
     transition: all 0.3s ease; /* Transição suave */
 }
-
-
-/* .text-brand {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--color-detail); /* tom dourado sofisticado */
-  /* font-weight: 400;
-  letter-spacing: 0.5px;
-} */
-
-
-
-/* .image-carousel-wrapper {
-  border-radius: 10px;
-  overflow: hidden;
-} */
 
 .image-carousel {
   display: flex;
@@ -211,9 +170,6 @@ h2 {
   color: var(--color-primary);
 }
 
-.texto-branco {
-  color:  var(--color-secondary);
-}
 
 /*****************************************************
  * NOSSO ESPAÇO
@@ -424,21 +380,6 @@ h2 {
   margin-bottom: 12px;
 }
 
-.procedimento-btn {
-  display: inline-block;
-  border-radius: 8px;
-  padding: 8px 20px;
-  background:  var(--color-white);
-  color: var(--color-secondary);
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.procedimento-btn:hover {
-  background: var(--color-secondary);
-  color:  var(--color-white);
-}
-
 
 
 /*****************************************************
@@ -509,194 +450,174 @@ h2 {
 
 
 
+/*****************************************************
+ * BLOG
+ *****************************************************/
 
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
+.blog-item {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding-bottom: 15px;
+}
 
+.blog-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
+.blog-item h3 {
+  margin: 15px 0 8px;
+  font-size: 1.1rem;
+}
 
+.blog-item p {
+  font-size: 0.95rem;
+  color: #555;
+  padding: 0 10px;
+}
 
+.blog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
 
+/* Responsivo */
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
 /*****************************************************
- * PORTFÓLIO
+ * FASES HORIZONTAIS - MESMO FORMATO EM MOBILE
  *****************************************************/
 
-/* .portfolio-card {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  height: 450px; /* altura padrão, ajuste se quiser maior */
-  /* overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-} */
+/* Container da lista de cards */
+.fase-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
 
-/* .portfolio-card:hover {
+/* Card horizontal */
+.fase-card-horizontal {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to bottom, #836B57, #ECD5B4); /* Degradê do escuro para o claro */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 220px;
+}
+
+.fase-card-horizontal:hover {
   transform: translateY(-5px);
 }
 
-.portfolio-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 80%, #7C8C78 100%);
-} */
-
-/* .portfolio-info {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  color: var(--color-secondary);
+/* Imagem */
+.fase-image {
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  min-height: 150px;
 }
 
-.portfolio-info h5 {
-  font-size: 20px;
-  font-weight: 600;
+/* Conteúdo */
+.fase-content {
+  width: 60%;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fase-content h5 {
+  font-size: 16px;
   margin-bottom: 5px;
+  color: var(--color-white)!important;
 }
 
-.portfolio-info p {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.titulo-card {
-  color: var(--color-secondary);
-}
-
-#blog-modern-v2 img {
-  width: 100%;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.blog-info {
-  color: #888;
-  font-size: 0.95rem;
-} */
-
-/* SEÇÃO A — CAPA */
-/* .blog-cover {
-  position: relative;
-}
-
-.blog-cover img {
-  height: 420px;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-.blog-cover .cover-text {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  font-size: 1.6rem;
-  color: white;
-  text-shadow: 0 3px 14px rgba(0,0,0,0.8);
-  font-weight: 600;
-} */
-
-/* SEÇÃO B — TEXTOS */
-/* .blog-editorial p {
-  font-size: 1.15rem;
-  color: #444;
-  line-height: 1.8;
-} */
-
-/* SEÇÃO C — LADO A LADO */
-/* .side-img {
-  height: 350px;
-  border-radius: 16px;
-} */
-
-/* SEÇÃO D — MOSAICO */
-/* .blog-mosaic {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-
-.blog-mosaic .mosaic-item img {
-  height: 260px;
-  object-fit: cover;
-  border-radius: 14px;
-}
-
-.blog-mosaic .tall img {
-  height: 380px;
-}
-
-.blog-mosaic .wide img {
-  height: 200px;
-} */
-
-/* SEÇÃO E — BOX DE DESTAQUE */
-/* .blog-highlight-box {
-  background: #111;
-  color: white;
-  padding: 40px;
-  border-radius: 16px;
-}
-
-.blog-highlight-box ul {
-  margin-top: 20px;
-  padding-left: 20px;
-}
-
-.blog-highlight-box li {
+.fase-content p {
+  font-size: 12px;
   margin-bottom: 10px;
-  font-size: 1.15rem;
-} */
-
-/* SEÇÃO F — BANNER LARGO */
-/* .blog-wide-img {
-  position: relative;
+  line-height: 1.3;
+  color: var(--color-white)!important;
 }
 
-.blog-wide-img img {
-  height: 320px;
+/* Responsividade */
+@media (max-width: 992px) {
+  .fase-card-horizontal {
+    height: 240px;
+  }
+
+  .fase-image {
+    min-height: 140px;
+  }
 }
 
-.blog-wide-img .wide-text {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-shadow: 0 3px 10px black;
+@media (max-width: 768px) {
+  .fase-card-horizontal {
+    height: 330px;
+  }
+
+  .fase-image {
+    min-height: 130px;
+  }
+
+  .fase-content h5 {
+    font-size: 14px;
+  }
+
+  .fase-content p {
+    font-size: 12px;
+  }
+
 }
 
-/* FINAL */
-/* .blog-final p {
-  font-size: 1.15rem;
-} */
+@media (max-width: 576px) {
+  .fase-card-horizontal {
+    height: 200px;
+  }
 
+  .fase-image {
+    min-height: 120px;
+  }
 
-/*****************************************************
- * ME CONHEÇA
- *****************************************************/
+  .fase-content h5 {
+    font-size: 13px;
+  }
 
-/* .me-conheca-section h1 {
-  color: var(--color-gray);
+  .fase-content p {
+    font-size: 11px;
+  }
+
+  .fase-btn {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
 }
 
-.me-conheca-section p {
-  color: var(--color-gray);
-  line-height: 1.7;
-}
-
-.me-conheca-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-} */
 
 /*****************************************************
  * INSTAGRAM - DIFERENCIAIS E VÍDEO CENTRAL
@@ -781,6 +702,367 @@ h2 {
 
   .insta-card {
     min-height: 150px;
+  }
+}
+
+/*****************************************************
+ * SERVIÇOS HORIZONTAIS - MESMO FORMATO EM MOBILE
+ *****************************************************/
+
+/* Container da lista de cards: grid fixo */
+.acidos-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards por linha no desktop */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Responsividade: 2 por linha em telas médias (tablet) */
+@media (max-width: 992px) {
+  .acidos-list {
+    grid-template-columns: repeat(3, 1fr); /* 2 cards por linha */
+  }
+}
+
+/* Responsividade: 1 card por linha em telas pequenas (mobile) */
+@media (max-width: 576px) {
+  .acidos-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+  }
+}
+
+/* Card vertical */
+.acido-card {
+  display: flex;
+  flex-direction: column; /* imagem em cima, conteúdo embaixo */
+  background-image: linear-gradient(to bottom right, #836B57, #ECD5B4);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%; /* garante altura igual para todos cards na mesma linha */
+}
+
+.acido-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagem do card */
+.acido-image {
+  width: 100%;
+  height: 290px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Conteúdo do card */
+.acido-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* garante que o conteúdo ocupe o restante do card */
+}
+
+.acido-content h5 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--color-white)!important;
+}
+
+.acido-content p {
+  font-size: 13px;
+  color: var(--color-white);
+  line-height: 1.4;
+}
+
+/* Ajustes de altura da imagem e texto para responsividade */
+@media (max-width: 992px) {
+  .acido-image {
+    height: 260px;
+  }
+
+  .acido-content h5 {
+    font-size: 15px;
+  }
+
+  .acido-content p {
+    font-size: 12px;
+  }
+
+  .acido-btn {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .acido-image {
+    height: 220px;
+  }
+
+  .acido-content h5 {
+    font-size: 14px;
+  }
+
+  .acido-content p {
+    font-size: 11px;
+  }
+
+  .acido-btn {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+/*****************************************************
+ * argilas
+ *****************************************************/
+
+.argilas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 40px;
+}
+
+.argila-item {
+  display: flex;
+  align-items: center;
+}
+
+.argila-item img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* MOBILE E TABLET */
+@media (max-width: 768px) {
+  .argilas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .argila-item {
+    flex-direction: row; /* <-- mantém a imagem ao lado */
+    text-align: left;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .argila-item img {
+    width: 200px; /* menor para caber melhor */
+    height: 200px;
+    object-fit: cover;
+
+  }
+}
+
+
+
+/*****************************************************
+ * tendencias
+ *****************************************************/
+/* Fotos quadradas */
+.foto-item {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .foto-item {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .foto-item {
+    width: 100%;
+    height: 260px;
+  }
+}
+
+
+
+/*****************************************************
+ * tendencia
+ *****************************************************/
+
+ /* Container do mosaico de tendências */
+.tendencias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 15px;
+}
+
+/* Item do mosaico */
+.tendencia-item {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.tendencia-item:hover {
+  transform: scale(1.05);
+}
+
+/* Tamanhos diferentes */
+.tendencia-item.grande {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.tendencia-item.pequena {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Texto abaixo do mosaico */
+.tendencias-text p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .tendencias-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .tendencia-item.grande {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .tendencias-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .tendencia-item.grande,
+  .tendencia-item.pequena {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .tendencia-item {
+    height: 250px; /* garante que o mosaico apareça */
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .tendencia-item {
+    height: 220px; /* pode ajustar o tamanho pro mobile */
+  }
+}
+
+/*****************************************************
+ * skincare
+ *****************************************************/
+
+ /* Imagens horizontais */
+.skincare-img {
+  width: 48%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.skincare-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Parágrafo centralizado */
+.skincare-text {
+  max-width: 700px;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .skincare-img {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+/*****************************************************
+ * skin steps
+ *****************************************************/
+
+/* Grid 2x2 */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-top: 30px;
+}
+
+/* Item */
+.step-item {
+  padding: 20px;
+}
+
+/* Números grandes */
+.step-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #b88c7a; /* tom suave, ajustável */
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Texto dos passos */
+.step-text {
+  font-size: 1rem;
+  color: #555;
+  max-width: 300px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Parágrafo final */
+.final-text {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr; /* vira 1 por linha no mobile */
+  }
+  .step-number {
+    font-size: 3rem;
   }
 }
 
@@ -1070,12 +1352,12 @@ body {
 /* Ajustes para telas pequenas (mobile) */
 @media (max-width: 767px) {  /* Para telas pequenas (celular) */
   .carousel .carousel-caption {
-    padding-top: 7rem;  /* Aumentei o padding-top para descer mais o conteúdo */
+    padding-top: -2rem;  /* Aumentei o padding-top para descer mais o conteúdo */
     margin-top: 2rem;  /* Adicionando margem superior para afastar ainda mais */
   }
 
   .carousel .carousel-caption h1 {
-    font-size: 2.5rem;  /* Ajuste o tamanho do título se necessário */
+    font-size: 2.0rem;  /* Ajuste o tamanho do título se necessário */
   }
 }
 
