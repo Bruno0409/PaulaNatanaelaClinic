@@ -461,7 +461,7 @@ h2 {
 }
 
 .blog-item {
-  background: #fff;
+  background: var(--color-white);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
@@ -483,14 +483,14 @@ h2 {
 
 .blog-item p {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--color-gray);
   padding: 0 10px;
 }
 
-.blog-item:hover {
+/* .blog-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
+} */
 
 /* Responsivo */
 @media (max-width: 1024px) {
@@ -1039,14 +1039,14 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Texto dos passos */
+/* Texto dos passos
 .step-text {
   font-size: 1rem;
   color: #555;
   max-width: 300px;
   margin: 0 auto;
   line-height: 1.5;
-}
+} */
 
 /* Parágrafo final */
 .final-text {
