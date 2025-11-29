@@ -1211,10 +1211,13 @@ h2 {
  * GLOBAL CLASSES
  *****************************************************/
 body {
-    /* font-family: var(--font-family-base);
-    font-size: var(--font-size-base); */
     background-color: #EFE5DC;
     overflow-x: hidden; /* Impede rolagem lateral */
+}
+
+body.blog {
+  background-color: #EFE5DC;
+  overflow-x: hidden; /* Impede rolagem lateral */
 }
 
 /* Back to top */
