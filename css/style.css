@@ -38,9 +38,7 @@
 section {
   scroll-margin-top: 70px; /* ajuste conforme a altura do seu header */
 }
-#maia {
-  scroll-margin-top: 120px; /* ajuste conforme a altura do seu header */
-}
+
 #espaco {
   scroll-margin-top: -20px; /* ajuste conforme a altura do seu header */
 }
@@ -381,7 +379,6 @@ h2 {
 }
 
 
-
 /*****************************************************
  * ESTETICA CORPORAL
  *****************************************************/
@@ -449,7 +446,6 @@ h2 {
 }
 
 
-
 /*****************************************************
  * BLOG
  *****************************************************/
@@ -504,7 +500,6 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
-
 
 
 /*****************************************************
@@ -620,14 +615,8 @@ h2 {
 
 
 /*****************************************************
- * INSTAGRAM - DIFERENCIAIS E VÍDEO CENTRAL
+ *  VÍDEO
  *****************************************************/
-
-
-#instagram {
-  padding-top: 50px!important;   /* Aumenta o espaçamento no topo da seção */
-  padding-bottom: 50px!important;  /* Aumenta o espaçamento no fundo da seção */
-}
 
 /* Vídeo central */
 .insta-video video {
@@ -1039,15 +1028,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Texto dos passos
-.step-text {
-  font-size: 1rem;
-  color: #555;
-  max-width: 300px;
-  margin: 0 auto;
-  line-height: 1.5;
-} */
-
 /* Parágrafo final */
 .final-text {
   max-width: 750px;
@@ -1066,6 +1046,53 @@ h2 {
   }
 }
 
+/*****************************************************
+ * before-after steps
+ *****************************************************/
+
+/* Grid 2x2 */
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-top: 30px;
+}
+
+/* Item */
+.before-after-item {
+  padding: 20px;
+}
+
+/* Imagem dos passos */
+.before-after-img {
+  width: 480px;
+  height: 480px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Texto final */
+.before-after-final-text {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Tablet (tela média) — agora vira 1 coluna */
+@media (max-width: 1024px) {
+  .before-after-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .before-after-img {
+    width: 330px;
+    height: 330px;
+  }
+}
 
 
 
@@ -1389,8 +1416,6 @@ body.blog {
     font-size: 4rem;  /* Título bem maior em desktop */
   }
 }
-
-
 
 p {
   margin-bottom: 0;
