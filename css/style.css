@@ -111,7 +111,13 @@ section {
 #header-carousel .carousel-item img {
     height: 95vh;         /* Faz a imagem ocupar todo o item */
     object-fit: cover;     /* Preenche sem distorcer */
-    object-position: 55% center;
+    object-position: 52% center;
+}
+
+@media (max-width: 767px) {
+  #header-carousel .carousel-item img {
+    object-position: 83% center; /* ajuste o valor como quiser */
+  }
 }
 
 /* Fonte principal apenas para o título */
@@ -127,6 +133,7 @@ section {
     font-size: 1rem; /* tamanho menor em tablets e celulares */
   }
 }
+
 
 /* Destaque para a palavra "beleza" */
 .text-highlight {
@@ -1379,22 +1386,30 @@ body.blog {
     font-weight: 400;
 }
 
-/* Ajustes para telas pequenas (mobile) */
-@media (max-width: 767px) {  /* Para telas pequenas (celular) */
+@media (max-width: 767px) {
   .carousel .carousel-caption {
-    padding-top: -2rem;  /* Aumentei o padding-top para descer mais o conteúdo */
-    margin-top: 2rem;  /* Adicionando margem superior para afastar ainda mais */
+    justify-content: flex-start; /* Joga o conteúdo para o topo */
+    padding-top: 3rem; /* Ajuste fino */
+    margin-top: 0;
   }
 
   .carousel .carousel-caption h1 {
-    font-size: 2.0rem;  /* Ajuste o tamanho do título se necessário */
+    font-size: 2rem;
   }
 }
+
+@media (max-width: 767px) {
+  .carousel .carousel-caption a.btn {
+    margin-top: 25rem; /* ajuste o valor conforme quiser */
+  }
+}
+
 
 /* Ajustes para tablets (telas médias) */
 @media (min-width: 768px) {
   .carousel .carousel-caption {
-    padding: 7rem 2rem; /* Mais espaço lateral */
+    justify-content: flex-end;
+    padding: 4rem 3rem; /* Mais espaço lateral */
     margin-top: 20rem;
   }
 
@@ -1403,17 +1418,24 @@ body.blog {
   }
 }
 
-/* Ajustes para desktops (telas grandes) */
 @media (min-width: 992px) {
+  .carousel .carousel-caption h1 {
+    font-size: 4rem; /* ajuste conforme quiser */
+  }
+}
+
+/* Ajustes para desktops (telas grandes) */
+@media (min-width: 768px) and (max-width: 991px) {
   .carousel .carousel-caption {
-    padding-left: 90px !important;  /* Padding maior à esquerda */
-    padding-right: 3rem; /* Mantém um padding direito decente */
-    padding-top: 3rem;
-    bottom: 200px;
+    top: 2rem;        /* controla a distância do topo */
+    bottom: auto;     /* remove o bottom que trava o conteúdo */
+    padding-top: 0;   /* opcional, se quiser apenas top */
+    justify-content: flex-start; /* garante que o conteúdo vá para cima */
   }
 
+
   .carousel .carousel-caption h1 {
-    font-size: 4rem;  /* Título bem maior em desktop */
+    font-size: 3rem;  /* Título bem maior em desktop */
   }
 }
 
