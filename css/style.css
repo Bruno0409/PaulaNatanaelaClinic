@@ -1389,7 +1389,7 @@ body.blog {
 @media (max-width: 767px) {
   .carousel .carousel-caption {
     justify-content: flex-start; /* Joga o conteúdo para o topo */
-    padding-top: 3rem; /* Ajuste fino */
+    padding-top: 2rem; /* Ajuste fino */
     margin-top: 0;
   }
 
