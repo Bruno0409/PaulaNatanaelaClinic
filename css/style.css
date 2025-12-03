@@ -510,7 +510,7 @@ h2 {
 
 
 /*****************************************************
- * FASES HORIZONTAIS - MESMO FORMATO EM MOBILE
+ * FASES HORIZONTAIS
  *****************************************************/
 
 /* Container da lista de cards */
@@ -1180,7 +1180,7 @@ h2 {
 .map-container iframe {
   border-radius: 20px;
   width: 100% !important;
-  height: 500px;
+  height: 430px;
   display: block;
   margin: 0 auto;
 }
