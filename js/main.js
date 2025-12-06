@@ -1,16 +1,6 @@
 (function ($) {
   "use strict";
 
-  // // Spinner
-  // var spinner = function () {
-  //   setTimeout(function () {
-  //     if ($("#spinner").length > 0) {
-  //       $("#spinner").removeClass("show");
-  //     }
-  //   }, 1);
-  // };
-  // spinner();
-
   // Initiate the wowjs
   new WOW().init();
 
@@ -171,6 +161,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Fecha o menu mobile quando um link é clicado
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+  link.addEventListener("click", () => {
+    const navbar = document.getElementById("navbarCollapse");
+    if (navbar.classList.contains("show")) {
+      new bootstrap.Collapse(navbar).hide();
+    }
+  });
+});
+
 
 
 
