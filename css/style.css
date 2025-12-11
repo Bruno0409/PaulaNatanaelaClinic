@@ -1594,7 +1594,6 @@ p {
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 10;
 }
 
 .faixa {
@@ -1603,51 +1602,46 @@ p {
     position: relative;
 }
 
-/* Track animada: todo o conteúdo se move */
 .faixa-track {
     display: flex;
     flex-wrap: nowrap;
-    animation: scroll-horizontal 32s linear infinite;
-    will-change: transform; /* melhora performance em mobile */
+    /* animação agora percorre 100% da tela em vez de 50% da faixa */
+    animation: scroll-horizontal 10s linear infinite;
+    will-change: transform;
 }
 
-/* Logos dentro da faixa */
 .logo {
     height: 40px;
     margin: 0 20px;
     flex-shrink: 0;
 }
 
-/* Animação do scroll */
+/* animação baseada na largura da tela */
 @keyframes scroll-horizontal {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100vw);
     }
 }
 
-/* Velocidade ajustada por breakpoint */
-
-/* Tablets pequenos */
+/* Ajustes de velocidade por breakpoint, se quiser mais rápido em mobile */
 @media (min-width: 576px) {
     .faixa-track {
-        animation-duration: 14s;
+        animation-duration: 12s;
     }
 }
 
-/* Desktop médio */
 @media (min-width: 768px) {
     .faixa-track {
         animation-duration: 14s;
     }
 }
 
-/* Desktop grande / monitores largos */
 @media (min-width: 1200px) {
     .faixa-track {
-        animation-duration: 14s;
+        animation-duration: 26s;
     }
 }
 
