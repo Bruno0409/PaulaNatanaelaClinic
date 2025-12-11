@@ -1582,7 +1582,7 @@ p {
 
 
 /*****************************************************
- * FAIXA ENTRE SEÇÕES (VERSÃO FINAL OTIMIZADA)
+ * FAIXA ANIMADA ENTRE SEÇÕES
  *****************************************************/
 
 .secao-faixa {
@@ -1593,30 +1593,32 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 10;
 }
 
-/* Container externo */
 .faixa {
     width: 100%;
     overflow: hidden;
     position: relative;
 }
 
-/* TRILHA ANIMADA (todo conteúdo se move) */
+/* Track animada: todo o conteúdo se move */
 .faixa-track {
     display: flex;
-    width: max-content;
+    flex-wrap: nowrap;
     animation: scroll-horizontal 32s linear infinite;
-    will-change: transform; /* melhora performance mobile */
+    will-change: transform; /* melhora performance em mobile */
 }
 
-/* Logos */
+/* Logos dentro da faixa */
 .logo {
     height: 40px;
     margin: 0 20px;
+    flex-shrink: 0;
 }
 
-/* Animação */
+/* Animação do scroll */
 @keyframes scroll-horizontal {
     0% {
         transform: translateX(0);
@@ -1626,28 +1628,27 @@ p {
     }
 }
 
-/*****************************************************
- * VELOCIDADE POR DISPOSITIVO
- *****************************************************/
+/* Velocidade ajustada por breakpoint */
 
-/* Tablet (um pouco mais rápido) */
+/* Tablets pequenos */
 @media (min-width: 576px) {
-  .faixa-track {
-      animation-duration: 32s;
-  }
+    .faixa-track {
+        animation-duration: 14s;
+    }
 }
 
 /* Desktop médio */
 @media (min-width: 768px) {
-  .faixa-track {
-      animation-duration: 32s;
-  }
+    .faixa-track {
+        animation-duration: 14s;
+    }
 }
 
-/* Desktop grande / Monitores maiores */
+/* Desktop grande / monitores largos */
 @media (min-width: 1200px) {
-  .faixa-track {
-      animation-duration: 32s;
-  }
+    .faixa-track {
+        animation-duration: 14s;
+    }
 }
+
 
