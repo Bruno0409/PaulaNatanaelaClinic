@@ -1282,21 +1282,6 @@ body.blog {
 .pt-6 { padding-top: var(--space-xl); }
 .pb-6 { padding-bottom: var(--space-xl); }
 
-/*****************************************************
- * SPINNER
- *****************************************************/
-/* #spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-} */
 
 /*****************************************************
  * NAVBAR
@@ -1370,82 +1355,116 @@ body.blog {
 }
 
 /*****************************************************
- * HEADER / CAROUSEL
+ * HERO / CAROUSEL (mantido como estava)
+ *****************************************************/
+
+#header-carousel,
+#header-carousel .carousel-inner,
+#header-carousel .carousel-item {
+    height: 95vh;
+}
+
+#header-carousel .carousel-item img {
+    height: 95vh;
+    object-fit: cover;
+    object-position: 52% center;
+}
+
+@media (max-width: 767px) {
+  #header-carousel .carousel-item img {
+    object-position: 83% center;
+  }
+}
+
+/*****************************************************
+ * CAPTION (apenas alinhamento com container)
  *****************************************************/
 .carousel .carousel-caption {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;  /* Alinha o conteúdo à esquerda */
-    justify-content: center;  /* Alinha o conteúdo ao centro por padrão */
+    align-items: flex-start;
+    justify-content: center;
+
     text-align: left;
-    padding: 2rem 1.5rem;  /* Padding padrão para celulares */
-    z-index: 1;
+
+    /* Zera o padding para o container alinhar com o resto do site */
+    padding: 0;
 }
 
-/* Ajuste para o título dentro do carrossel */
+/* Mantém SEU alinhamento lateral interno */
+.carousel-caption .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/*****************************************************
+ * TÍTULO – mantém exatamente como estava
+ *****************************************************/
 .carousel .carousel-caption h1 {
     margin: 0;
-    font-size: 2rem; /* Tamanho menor para telas pequenas (celular) */
+    font-size: 2rem;
     color: var(--color-secondary);
     font-weight: 400;
 }
 
+/* Mobile */
 @media (max-width: 767px) {
   .carousel .carousel-caption {
-    justify-content: flex-start; /* Joga o conteúdo para o topo */
-    padding-top: 2rem; /* Ajuste fino */
+    justify-content: flex-start;
+    padding-top: 2rem;
     margin-top: 0;
   }
 
   .carousel .carousel-caption h1 {
     font-size: 2rem;
   }
-}
 
-@media (max-width: 767px) {
   .carousel .carousel-caption a.btn {
-    margin-top: 25rem; /* ajuste o valor conforme quiser */
+    margin-top: 25rem; /* MANTIDO */
   }
 }
 
-
-/* Ajustes para tablets (telas médias) */
+/* Tablets */
 @media (min-width: 768px) {
   .carousel .carousel-caption {
     justify-content: flex-end;
-    padding: 4rem 3rem; /* Mais espaço lateral */
-    margin-top: 20rem;
+    padding: 4rem 3rem; /* MANTIDO */
+    margin-top: 20rem; /* MANTIDO */
   }
 
   .carousel .carousel-caption h1 {
-    font-size: 3rem; /* Tamanho maior que no celular */
+    font-size: 3rem;
   }
 }
 
+/* Desktop */
 @media (min-width: 992px) {
   .carousel .carousel-caption h1 {
-    font-size: 4rem; /* ajuste conforme quiser */
+    font-size: 4rem;
   }
 }
 
-/* Ajustes para desktops (telas grandes) */
+/* Desktop médio */
 @media (min-width: 768px) and (max-width: 991px) {
   .carousel .carousel-caption {
-    top: 2rem;        /* controla a distância do topo */
-    bottom: auto;     /* remove o bottom que trava o conteúdo */
-    padding-top: 0;   /* opcional, se quiser apenas top */
-    justify-content: flex-start; /* garante que o conteúdo vá para cima */
+    top: 2rem;
+    bottom: auto;
+    padding-top: 0;
+    justify-content: flex-start;
   }
-
 
   .carousel .carousel-caption h1 {
-    font-size: 3rem;  /* Título bem maior em desktop */
+    font-size: 3rem;
   }
 }
+
+
 
 p {
   margin-bottom: 0;
@@ -1561,52 +1580,74 @@ p {
 }
 
 
+
 /*****************************************************
- * FAIXA
+ * FAIXA ENTRE SEÇÕES (VERSÃO FINAL OTIMIZADA)
  *****************************************************/
 
-
-/* Estilos para a faixa entre as seções */
 .secao-faixa {
-    width: 100%; /* Largura total da tela */
-    position: relative; /* Para garantir o posicionamento da faixa */
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    height: 60px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0; /* Espaço entre as seções */
-    z-index: 1000;
-
+    justify-content: center;
 }
 
-/* Estilos para a faixa */
-.secao-faixa .faixa {
-    position: absolute; /* Faixa posicionada absolutamente na tela */
-    width: 100%; /* A largura da faixa deve ser maior que a tela */
-    height: 60px; /* Altura da faixa */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-primary); /* Cor sólida verde suave */
-    overflow: hidden; /* Impede que a faixa ultrapasse os limites */
-    top: 0; /* Coloca a faixa no meio da tela */
-    left: 0; /* Inicia no canto inferior esquerdo */
-    transform-origin: center center; /* Garantir que a faixa se mova da origem central */
+/* Container externo */
+.faixa {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
+/* TRILHA ANIMADA (todo conteúdo se move) */
+.faixa-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-horizontal 32s linear infinite;
+    will-change: transform; /* melhora performance mobile */
+}
 
-/* Estilos para as logos dentro da faixa */
+/* Logos */
 .logo {
-    height: 40px; /* Ajuste o tamanho da logo conforme necessário */
-    margin-right: 20px; /* Espaço entre as logos */
-    animation: deslizar-diagonal 12s linear infinite; /* Animação horizontal suave */
+    height: 40px;
+    margin: 0 20px;
 }
 
-/* Animação do movimento suave da logo */
-@keyframes deslizar-diagonal {
+/* Animação */
+@keyframes scroll-horizontal {
     0% {
-        transform: translateX(100%); /* Começa fora da tela à direita */
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); /* Termina fora da tela à esquerda */
+        transform: translateX(-50%);
     }
 }
+
+/*****************************************************
+ * VELOCIDADE POR DISPOSITIVO
+ *****************************************************/
+
+/* Tablet (um pouco mais rápido) */
+@media (min-width: 576px) {
+  .faixa-track {
+      animation-duration: 32s;
+  }
+}
+
+/* Desktop médio */
+@media (min-width: 768px) {
+  .faixa-track {
+      animation-duration: 32s;
+  }
+}
+
+/* Desktop grande / Monitores maiores */
+@media (min-width: 1200px) {
+  .faixa-track {
+      animation-duration: 32s;
+  }
+}
+
