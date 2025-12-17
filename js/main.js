@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Fecha o menu mobile quando um link é clicado
-document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
   link.addEventListener("click", () => {
     const navbar = document.getElementById("navbarCollapse");
     if (navbar.classList.contains("show")) {
@@ -172,7 +172,79 @@ document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
   });
 });
 
+// -------------------------
+// COOKIE / LGPD - Ajustado para compatibilidade iOS
+// -------------------------
 
+const consentKey = "cookieConsent";
+let gaCarregado = false;
 
+// Função para verificar se o localStorage está disponível e seguro
+function storageDisponivel() {
+  try {
+    const teste = "__teste__";
+    localStorage.setItem(teste, teste);
+    localStorage.removeItem(teste);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 
+// Carrega o Google Analytics
+function carregarGoogleAnalytics() {
+  if (gaCarregado) return;
+  gaCarregado = true;
 
+  const script = document.createElement("script");
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3GXRQ6798";
+  script.async = true;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-T3GXRQ6798", { anonymize_ip: true });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.getElementById("cookie-consent-card");
+  const btnAccept = document.getElementById("accept-cookies");
+  const btnReject = document.getElementById("reject-cookies");
+
+  if (!banner || !btnAccept || !btnReject) return;
+
+  // Verifica a disponibilidade do localStorage
+  const storageOk = storageDisponivel();
+  let consent = null;
+
+  if (storageOk) {
+    consent = localStorage.getItem(consentKey);
+  }
+
+  // Se o consentimento já foi dado, carrega o Google Analytics
+  if (consent === "accepted") {
+    carregarGoogleAnalytics();
+  } else if (!consent) {
+    banner.style.display = "flex";
+  }
+
+  // Aceitar cookies
+  btnAccept.addEventListener("click", function () {
+    if (storageOk) {
+      localStorage.setItem(consentKey, "accepted");
+    }
+    carregarGoogleAnalytics();
+    banner.style.display = "none";
+  });
+
+  // Recusar cookies
+  btnReject.addEventListener("click", function () {
+    if (storageOk) {
+      localStorage.setItem(consentKey, "rejected");
+    }
+    banner.style.display = "none";
+  });
+});

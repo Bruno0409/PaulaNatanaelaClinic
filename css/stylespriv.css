@@ -1,0 +1,99 @@
+/* CSS para o layout moderno da Política de Privacidade */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+header {
+  background-color: #4F423A;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+section {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  color: #4F423A;
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #4F423A;
+  color: white;
+  border-radius: 0 0 12px 12px;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+footer button {
+  background-color: #ffffff;
+  color: #4F423A;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 10px;
+}
+
+footer button:hover {
+  background-color: #4F423A;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Estilo do aviso de privacidade (banners ou pop-ups) */
+#privacy-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  z-index: 9999;
+  font-size: 1.1rem;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
