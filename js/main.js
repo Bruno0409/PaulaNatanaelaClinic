@@ -197,7 +197,7 @@ function carregarGoogleAnalytics() {
   gaCarregado = true;
 
   const script = document.createElement("script");
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3GXRQ6798";
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-7KKPYSWKBQ";
   script.async = true;
   document.head.appendChild(script);
 
@@ -206,7 +206,7 @@ function carregarGoogleAnalytics() {
     dataLayer.push(arguments);
   }
   gtag("js", new Date());
-  gtag("config", "G-T3GXRQ6798", { anonymize_ip: true });
+  gtag("config", "G-7KKPYSWKBQ", { anonymize_ip: true });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
